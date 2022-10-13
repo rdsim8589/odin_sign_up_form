@@ -101,6 +101,13 @@ form div div{
     border: 1px solid rgb(243 238 238);
  }
 
+ #password_error {
+    visibility: hidden;
+    color: red;
+    padding-top: 0px;
+    font-size: 12px;
+ }
+
 .right .call_to_action {
     padding: 20px;
     padding-left: min(10%, 60px);
