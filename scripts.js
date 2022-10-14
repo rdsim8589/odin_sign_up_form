@@ -20,14 +20,14 @@ function validate_password() {
     const password = document.getElementById("password");
     const confirm_password = document.getElementById("confirm_password");
     if (password.value != confirm_password.value) {
-        password.style = "border: thick solid red;";
-        confirm_password.style = "border: thick solid red;";
+        password.style = "border: solid red;";
+        confirm_password.style = "border: solid red;";
         const error = document.getElementById("password_error");
         error.style = "visibility: visible";
         return false
     } else {
         password.style = "border: thick solid green;";
-        confirm_password.style = "border: thick solid green;";
+        confirm_password.style = "border: solid green;";
         const error = document.getElementById("password_error");
         error.style = "visibility: hidden";
     }
@@ -35,5 +35,3 @@ function validate_password() {
 }
 
 getFormData()
-var formData = new FormData(document.querySelector("form"));
-console.log(formData);
