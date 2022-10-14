@@ -3,10 +3,18 @@
 function getFormData() {
     const form = document.querySelector("form");
     form.addEventListener('submit', (e) => {
-        for (const [key, value] of form.elements) {
-            console.log( `${key}: ${value}`)
+        const fields = form.elements;
+        e.preventDefault();        
+        for (const field of fields) {
+            console.log( `${field.name}: ${field.value}`);
         }
-        e.preventDefault();
+        if (fields["password"].value != fields["confirm_password"].value) {
+            console.log("stopped");
+            return false;
+        }
+        //would submit the form once information is valid
+        form.submit() 
+        return true;
     })
 }
 
@@ -17,13 +25,13 @@ function validate_password() {
         password.style = "border: thick solid red;";
         confirm_password.style = "border: thick solid red;";
         const error = document.getElementById("password_error");
-        error.style = "visibility: visible"
+        error.style = "visibility: visible";
         return false
     } else {
         password.style = "border: thick solid green;";
         confirm_password.style = "border: thick solid green;";
         const error = document.getElementById("password_error");
-        error.style = "visibility: hidden"
+        error.style = "visibility: hidden";
     }
     return true
 }
