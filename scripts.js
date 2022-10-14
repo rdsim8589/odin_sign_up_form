@@ -1,5 +1,3 @@
-// do javascript to get all the information input on the form once Create Account is clicked
-
 function getFormData() {
     const form = document.querySelector("form");
     form.addEventListener('submit', (e) => {
@@ -36,14 +34,6 @@ function validate_password() {
     return true
 }
 
-//on button click of createAccount get form information
-
-function submit() {
-    const create_button = document.querySelector("input[type='submit']")
-    create_button.addEventListener("click", () => {
-        console.log("click");
-        //getFormData();
-    })
-}
-
 getFormData()
+var formData = new FormData(document.querySelector("form"));
+console.log(formData);
